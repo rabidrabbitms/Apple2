@@ -1,0 +1,19 @@
+<ion-grid style="padding-bottom:0;">
+  <ion-row style="background-color: white; z-index: 2; overflow: hidden;" (click)="nav()">
+    <ion-col style="background-color: white; z-index: 2; overflow: hidden; padding-bottom:0;">
+      <ion-row *ngIf="banner" style="border: solid 2px rgb(72, 71, 81);">
+        <ion-col size="9">
+          <ion-row style="background-color: white; z-index: 2; overflow: hidden;">
+            <ion-text class="body-header">{{banner.header}}</ion-text>
+          </ion-row>
+          <ion-row style="margin-top:.25em;">
+            <ion-text class="body-body">{{banner.body}}</ion-text>
+          </ion-row>
+        </ion-col>
+        <ion-col style="background-color: white; z-index: 2; overflow: hidden;">
+            <img class="image" src="{{banner.img}}" />
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-grid>

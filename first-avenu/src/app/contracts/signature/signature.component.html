@@ -1,0 +1,15 @@
+﻿<canvas #canvas
+        (mousemove)="mouseEvent($event)"
+        (mouseover)="mouseEvent($event)"
+        (mouseout)="mouseEvent($event)"
+        (mousedown)="mouseEvent($event)"
+        (mouseup)="mouseEvent($event)"
+        (touchstart)="touchEvent($event)"
+        (touchmove)="touchEvent($event)"
+        (touchend)="touchEvent($event)"
+        width="{{Size.width}}" height="{{Size.height}}">
+</canvas>
+<div class="signature-buttons">
+    <ng-content>
+    </ng-content>
+</div>

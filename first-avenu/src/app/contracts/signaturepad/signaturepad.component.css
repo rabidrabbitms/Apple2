@@ -1,0 +1,16 @@
+﻿:host {
+	width: 100%;
+	overscroll-behavior: none;
+}
+
+div.signaturepad {
+    width: 95%;
+    max-width: 800px;
+    margin: auto;
+}
+#LoAwayFormBtn, #LoAwayFormBtn, #LoAvailableBtn, #LoChatMinimizedButton, #lo_chat_box {
+    display: none !important;
+}
+.blue {
+    display: none;
+}

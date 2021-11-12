@@ -1,0 +1,9 @@
+﻿div.content {
+	width: 100%;
+	margin: 0 10px 10px 0;
+	box-sizing: content-box;
+	padding-bottom: 60px;
+}
+.blue {
+    display: none;
+}

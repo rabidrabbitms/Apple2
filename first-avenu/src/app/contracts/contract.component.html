@@ -1,0 +1,27 @@
+﻿<mlc-template-page [Page]="currentPage">
+	<mlc-template-page-signature *ngFor="let signature of currentPage.Signatures" [Signature]="signature" (signatureApplied)="signatureApplied($event)">
+		<div style="display:flex;flex-direction:row;width:100%;height:100%;background-color:#eeeeee;opacity:.5;margin-top:-55px;" *ngIf="!isSigned(signature)" (click)="sign(signature)">
+			<div style="flex:1"></div>
+			<div style="margin:auto;text-align:center;flex:1">Apply Signature</div>
+			<div style="flex:1"></div>
+		</div>
+	</mlc-template-page-signature>
+	<mlc-template-page-initials *ngFor="let initials of currentPage.Initials" [Initials]="initials">
+		<div style="display:flex;flex-direction:row;width:100%;height:100%;background-color:#eeeeee;opacity:.5;margin-top:-55px;" *ngIf="!isInitialed(initials)" (click)="initial(initials)">
+			<div style="flex:1"></div>
+			<div style="margin:auto;text-align:center;flex:1">Apply Initial</div>
+			<div style="flex:1"></div>
+		</div>
+	</mlc-template-page-initials>
+</mlc-template-page>
+<div class="navigation pb-3">
+	<div class="text-center" style="margin-top: -5px; margin-bottom: 5px;"><small>Page {{currentPageNumber}} of {{totalPages}}</small></div>
+	<div class="row">
+		<div class="col">
+			<button type="button" class="btn btn-sm btn-block btn-danger" (click)="setPrevPage()">Back</button>
+		</div>
+		<div class="col">
+			<button type="button" class="btn btn-sm btn-block btn-primary" (click)="setNextPage()">Next</button>
+		</div>
+	</div>
+</div>

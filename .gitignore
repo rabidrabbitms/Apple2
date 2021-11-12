@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/first-avenu/node_modules/ngx-countdown/bundles/ngx-countdown.umd.js.map

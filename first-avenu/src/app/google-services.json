@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994074537996",
+    "project_id": "fa-app-b5383",
+    "storage_bucket": "fa-app-b5383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994074537996:android:5a60e1298d04059a34be29",
+        "android_client_info": {
+          "package_name": "com.firstavenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994074537996-jm6ik121til28c9bgb6mumihkbhb5ltp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2XYDmdbC0_yoGxyVH0MI10flC3URZqVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994074537996-jm6ik121til28c9bgb6mumihkbhb5ltp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

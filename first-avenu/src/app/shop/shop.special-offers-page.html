@@ -1,0 +1,69 @@
+<nav></nav>
+  <ion-content [fullscreen]="false" *ngIf="!loading">
+    <div id="welcome-header">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1 class="header">Special Offers</h1>
+            <h2 class="header2">{{productModel.Product.ProductName}} - {{productModel.Product.Name}}</h2>
+            <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide>
+                <img class="getaway" src="{{productModel.Product.Asset}}" />
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div id="container" style="align-content:center">
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-no-padding">
+          <ion-col size="6">
+            <ion-row>
+              <countdown class="countdown" [config]="{ leftTime: 30000000 }"></countdown>
+            </ion-row>
+          </ion-col>
+          <ion-col size="6">
+            <h2 class="inventory-text">Only {{productModel.Product.ProductInventory}} Left!</h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngIf="paycycle == undefined">
+            <ion-text class="body-body">As low as:</ion-text>
+          </ion-col>
+          <ion-col *ngIf="paycycle != undefined">
+            <ion-text class="body-body">[#] Payments</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text class="body-body">{{productModel.Product.Payments}} Payments of ${{productModel.Product.PaymentAmount}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button color="tertiary" expand="full" (click)="addToCart(productModel)">Add to Cart</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Description
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ion-row>
+                <ion-col>
+                  <ion-text class="body-body">
+                    {{productModel.Product.Description}}
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <app-explore-container name="Special Offers page"></app-explore-container>
+  </ion-content>

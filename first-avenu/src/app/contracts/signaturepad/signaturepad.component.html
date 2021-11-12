@@ -1,0 +1,96 @@
+﻿<div class="card loader" *ngIf="loading"></div>
+<div class="card" *ngIf="!loading && Contract">
+    
+    <div class="container-fluid">
+        <div *ngIf="Show === 'Signature'">
+            <h5 class="card-title">Create Signature</h5>
+            <div class="card-body">
+            <h5 class="card-subtitle text-center">Consent and Acknowledgement</h5>
+            <div class="signaturepad" style="overflow-x: hidden;">
+                
+                    <div class="row mb-3">
+                        <div class="col text-center">
+                            <small (click)="showDisclosure=!showDisclosure" class="mb-3" style="text-decoration: underline; cursor: pointer; color: blue;" *ngIf="!showDisclosure">View Disclosure information</small>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="showDisclosure">
+                        <div class="col">
+                            Please read this information carefully and print or save a copy for future reference. By providing your signature and continuing:
+                            <br />
+                            <ol type="i">
+                                <li>you acknowledge that you are able to and did receive, read and understand this Consent for Use of Electronic Records and Signatures, our Privacy Policy, and the disclosures made with your Loan application; and</li>
+                                <li>you consent to use and accept electronic signatures with the same force and effect as a manual signature, records, and Disclosures described in this notice, when those Disclosures are made through this website, the email address provided in your application, and any updated email address you provide using the procedures described above.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            Please sign within the grey box below to create your electronic signature:
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mlc-template-signature #signature>
+                                <div class="row mt-3">
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-link text-danger" (click)="clearSignature()">Clear</button>
+                                    </div>
+                                    <div class="col text-center">
+                                        <button type="button" class="btn btn-success btn-block" (click)="applySignature()" [disabled]="!signature?.SignatureValid">OK</button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3" *ngIf="!validSignature && touched">
+                                    <div class="col">
+                                        <div class="alert alert-danger">Please sign in the grey box above.</div>
+                                    </div>
+                                </div>
+                            </mlc-template-signature>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="Show === 'Initials'">
+            <h5 class="card-title">Create Initials</h5>
+            <div class="signaturepad" style="overflow-x: hidden;">
+                <div class="row mb-3">
+                    <div class="col">
+                        Please initial within the grey box below to create your electronic initials:
+                    </div>
+                </div>
+                <mlc-template-signature #initials>
+                    <div class="row mt-3">
+                        <div class="col text-center">
+                            <button type="button" class="btn btn-link text-danger" (click)="clearInitials()">Clear</button>
+                        </div>
+                        <div class="col text-center">
+                            <button type="button" class="btn btn-success btn-block" (click)="applyInitials()" [disabled]="!validInitial">OK</button>
+                        </div>
+                    </div>
+                </mlc-template-signature>
+            </div>
+        </div>
+        <div *ngIf="Show === 'Contract'">
+            <h5 class="card-title">Review And Sign</h5>
+            <div class="signaturepad">
+                <mlc-template-contract #contract [Contract]="Contract" [Signature]="Signature" [Initials]="Initials" (status)="contractStatus($event)"></mlc-template-contract>
+            </div>
+        </div>
+        <div *ngIf="Show === 'Waiting'">
+            <h5 class="card-title">Agreement Signed</h5>
+            <div class="signaturepad" style="overflow-x: hidden;">
+                <div class="row">
+                    <div class="col">
+                        <h4>Thank you!</h4>
+                        <p>We are finalizing your agreement!  This process should take less than a minute, please do not reload or navigate away from this page.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <img src="https://resources.minlc.com/images/soar/Ripple.gif" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

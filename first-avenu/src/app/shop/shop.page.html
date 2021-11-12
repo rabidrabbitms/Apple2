@@ -1,0 +1,37 @@
+<nav></nav>
+<banner></banner>
+<ion-content [fullscreen]="false">
+  <ion-grid style="padding-top:.5em;">
+    <ion-row>
+      <ion-col>
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <h2 class="header" style="font-size:32px !important;">Vacations</h2>
+            <img class="vacation" routerLink="vacations" src="{{vacationsImage.img}}" />
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <ion-row class="ion-justify-content-center">
+              <ion-button class="vacation-button" color="medium" style="min-width: 60%; margin-top: -2em; border: solid 1px black" expand="full" routerLink="vacations">Over 3000 Destinations!</ion-button>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <h2 class="header" style="font-size:32px !important;">Special Offers</h2>
+            <img class="vacation" routerLink="shop-special-offers-landing" src="{{specialOffersImage.img}}" />
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <ion-row class="ion-justify-content-center">
+              <ion-button class="vacation-button" color="medium" style="min-width:60%; margin-top:-2em; border:solid 1px black" expand="full" routerLink="shop-special-offers-landing">Special Offers For You!</ion-button>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-explore-container name="Shop page"></app-explore-container>
+</ion-content>

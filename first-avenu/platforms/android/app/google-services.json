@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "45170585834",
+    "project_id": "firstavenu-46ec4",
+    "storage_bucket": "firstavenu-46ec4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45170585834:android:01795cfbb1db23c78fe793",
+        "android_client_info": {
+          "package_name": "io.ionic.FirstAvenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45170585834-1j2rts1v1u662soahb975rr5nrqf76og.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6_BoSWC2BNGZwPhT7uw0792dW-bL4va8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45170585834-1j2rts1v1u662soahb975rr5nrqf76og.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar style="height:max-content;" class="minimize">
+    <ion-grid class="ion-no-padding">
+      <ion-row style="min-height: 40px;">
+        <ion-col size="3">
+          <ion-row class="ion-justify-content-center">
+            <img style="padding: .5em; padding-top: 1em;" src="./assets/Back.svg" (click)="back()" />
+          </ion-row>
+        </ion-col>
+        <ion-col [size]="buyingPower > 0 ? '1.5' : '5.5'" *ngIf="!buyingPower">
+          <ion-row class="ion-justify-content-center">
+            <img style="padding: .5em" src="./assets/TinyLooky.svg" />
+          </ion-row>
+        </ion-col>
+        <ion-col size="1.5" *ngIf="buyingPower">
+          <ion-row style="padding:0;">
+            <ion-text class="nav">
+              Buying
+            </ion-text>
+          </ion-row>
+          <ion-row style="margin-top:-8px;">
+            <ion-text class="nav">
+              Power
+            </ion-text>
+          </ion-row>
+        </ion-col>
+        <ion-col size="4" *ngIf="buyingPower">
+          <h2>$ {{buyingPower}}</h2>
+        </ion-col>
+        <ion-col>
+          <ion-row class="ion-justify-content-center">
+            <img style="padding: .5em; padding-top: .8em" src="./assets/icon/Cart.svg" routerLink="/tabs/tabs/shop/cart" />
+            <ion-icon *ngIf="showCartAlert" name="alert-circle-outline"></ion-icon>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
